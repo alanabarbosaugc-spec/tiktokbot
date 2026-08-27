@@ -2,9 +2,9 @@
   "name": "tiktokbot",
   "version": "1.0.0",
   "description": "",
-  "main": "teste.js",
+  "main": "verificar.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node verificar.js"
   },
   "keywords": [],
   "author": "",
