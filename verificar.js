@@ -4,7 +4,7 @@ const axios = require("axios");
 
 const webhook = process.env.WEBHOOK;
 
-let notificou = false;
+let ultimaNotificacao = 0;
 
 console.log("Monitor iniciado...");
 
@@ -21,9 +21,11 @@ setInterval(async () => {
 
     console.log("LIVE ENCONTRADA!");
 
-    if (!notificou) {
+    const agora = Date.now();
 
-      notificou = true;
+if (agora - ultimaNotificacao > 4 * 60 * 60 * 1000) {
+
+      ultimaNotificacao = agora;
 
       await axios.post(webhook, {
         content: "@everyone",
@@ -47,7 +49,6 @@ setInterval(async () => {
 
     console.log("Offline");
 
-    notificou = false;
 
   }
 
