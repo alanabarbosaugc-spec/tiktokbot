@@ -26,9 +26,12 @@ setInterval(async () => {
 
   try {
 
-    await tiktokLive.connect();
+  const state = await tiktokLive.connect();
 
-    deteccoes++;
+  console.log("STATE:");
+  console.log(state);
+
+  deteccoes++;
 
     console.log(`LIVE ENCONTRADA! (${deteccoes})`);
 
