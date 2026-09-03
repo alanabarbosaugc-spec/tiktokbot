@@ -58,11 +58,12 @@ setInterval(async () => {
       console.log("Notificação enviada!");
     }
 
-  } catch {
+  } catch (erro) {
 
-    deteccoes = 0;
+  deteccoes = 0;
 
-    console.log("Offline");
-  }
+  console.log("Offline");
+  console.log("ERRO:", erro.message);
+}
 
 }, 60000);
